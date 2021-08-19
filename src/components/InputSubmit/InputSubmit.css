@@ -1,18 +1,26 @@
+.form-container {
+  width: 500px;
+}
+
 .button-input {
   padding: 10px 20px;
-  border: solid 2px #005ad8;
+  border: solid 2px #7e0000;
   border-radius: 5px;
-  background-color: #005ad8;
-  color: white;
+  background-color: #4dbdae;
+  color: rgb(48, 13, 13);
   outline: none;
   cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s linear;
 }
 
 .button-input:hover {
-  background-color: rgb(57, 144, 214);
+  background-color: rgb(34, 160, 91);
+  color: rgb(255, 255, 255);
 }
 
 .search {
+  width: 80%;
   padding: 10px 20px;
   border: solid 2px #686868;
   border-radius: 5px;

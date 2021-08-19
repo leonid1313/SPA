@@ -10,13 +10,13 @@ function About ({
 }) {
     return (
       <Container>
-      <a href={link}>
+      <a href={link} asdfsf>
         <Image src={image} />
       </a>
       <CardBody>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <Title>{rank}</Title>
+        <Title>{title} sdfasd</Title>
+        <Description>{description} asdf</Description>
+        <Title>{rank} adsf</Title>
       </CardBody>
     </Container>
     )

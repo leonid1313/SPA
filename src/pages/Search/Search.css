@@ -2,4 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5%;
+}
+
+.title-error {
+  margin-top: 15%;
 }

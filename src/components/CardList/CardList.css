@@ -1,4 +1,8 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 3px solid rgb(34, 2, 2);
+  margin: 20px 0;
 }

@@ -43,7 +43,7 @@ function Search () {
           : <ReactBootStrap.Spinner animation="border" />
         } */}
         {(repos.length === 0)
-          ? <div>No repositories</div>
+          ? <h1 className="title-error">No repositories</h1>
           : <CardList items={currentPosts}/>
         }
         <Pagination
