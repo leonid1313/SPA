@@ -1,0 +1,25 @@
+.button-input {
+  padding: 10px 20px;
+  border: solid 2px #005ad8;
+  border-radius: 5px;
+  background-color: #005ad8;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.button-input:hover {
+  background-color: rgb(57, 144, 214);
+}
+
+.search {
+  padding: 10px 20px;
+  border: solid 2px #686868;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.search:focus {
+  border-color: #005ad8;
+  transition: 0.5s;
+}
