@@ -1,21 +1,16 @@
 import React, {useState} from 'react';
 import './Card.css'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 function Card ({
-  link,
   image,
   title,
-  description,
   rank,
-  date,
+  item,
 }) {
 
   const [name, setName] = useState('Add to favourites')
   const [count, setCount] = useState("")
-
-  const aboutPage = () => {
-    window.location.assign('http://localhost:3000/about/');
-  }
 
   const addToFavourite = () => {
     if(name === 'Add to favourites') {
@@ -30,22 +25,24 @@ function Card ({
 
     return (
       <div className="container-card">
-        <a className="link" href={link}>
           <img className="image" src={image} />
-        </a>
         <div className="cardBody">
           <h1 className="title">{title}</h1>
-          <p className="description">{description}</p>
           <p className="rank-text">Rank: {rank}</p>
-          <p className="date-text">Date: {date}</p>
           <div>
             <button
               className="button-card button-card-about"
-              onClick={(e) => {
-                aboutPage(e)
-              }} 
             >
-            view more</button>
+              <Link 
+                className="link-about"
+                to={{
+                  pathname: `/about/${item}`,
+                  data: item,
+                }}
+              >
+                About
+              </Link>
+            </button>
             {(name === 'Add to favourites') 
               ? <p className="default"></p>
               :<div className="count">{count}</div>

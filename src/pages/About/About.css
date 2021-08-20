@@ -1,0 +1,26 @@
+.login {
+  text-align: center;
+  font-size: 15px;
+}
+
+.container-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-card-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+.description {
+  font-size: 15px;
+  text-align: center;
+}
+
+.date-text {
+  text-align: center;
+}

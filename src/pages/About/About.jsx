@@ -1,51 +1,29 @@
 import React from 'react'
-import styled from 'styled-components'
+import './About.css'
 
 function About ({
-  link,
-  image,
-  title,
-  description,
-  rank
+  ...props
 }) {
+
+  console.log(props);
+  console.log(props.location.data);
+
     return (
-      <Container>
-      <a href={link} asdfsf>
-        <Image src={image} />
-      </a>
-      <CardBody>
-        <Title>{title} sdfasd</Title>
-        <Description>{description} asdf</Description>
-        <Title>{rank} adsf</Title>
-      </CardBody>
-    </Container>
+      <div className="container-about">
+          <div className="container-card container-card-about">
+        <a className="link" href={props.location.data.html_url}>
+          <img className="image" src={props.location.data.owner.avatar_url} />
+        </a>
+        <div className="cardBody">
+          <h1 className="login">Login: {props.location.data.owner.login}</h1>
+          <h1 className="title">Title: {props.location.data.name}</h1>
+          <p className="description">Description: {props.location.data.description}</p>
+          <p className="rank-text">Rank: {props.location.data.stargazers_count}</p>
+          <p className="date-text">Date: {props.location.data.created_at}</p>
+        </div>
+      </div>
+      </div>
     )
 }
-
-const Container = styled.div`
-  flex: 1;
-  flex-basis: 15%;
-  margin: 15px;
-  border: solid 2px #3a3a3a;
-  border-radius: 5px;
-`
-
-const CardBody = styled.div`
-  padding: 10px;
-`
-
-const Title = styled.h1`
-  font-size: 15px;
-  text-align: center;
-`
-
-const Description = styled.p`
-  font-size: 12px;
-  text-align: center;
-`
-
-const Image = styled.img`
-  width: 100%;
-`
 
 export default About;

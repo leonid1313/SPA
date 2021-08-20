@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import './InputSubmit.css'
 
 function InputSubmit ({
-  onSearch
+  onSearch,
 }) {
-  
   const [value, setValue] = useState('');
   const [valueDirty, setValueDirty] = useState(false);
   const [valueError, setValueError] = useState('Cannot be empty');
@@ -14,16 +13,17 @@ function InputSubmit ({
   }
 
   const submitValue = () => {
+    setValueDirty(false)
     onSearch(value)
   }
 
-  // const blurHandler = (event) => {
-  //   switch(event.target.name) {
-  //     case 'search':
-  //       setValueDirty(true)
-  //       break
-  //   }
-  // }
+  const blurHandler = (event) => {
+    switch(event.target.name) {
+      case 'search':
+        setValueDirty(true)
+        break
+    }
+  }
 
     return (
       <div>
@@ -31,8 +31,10 @@ function InputSubmit ({
             className="form-container"
             onSubmit={(event) => event.preventDefault()}
         >
-        {(valueDirty && valueError) &&
-          <div>{valueError}</div>
+        {(valueDirty && valueError)
+          ? <div>{valueError}</div>
+          : <div className="default"></div>
+          
         }
         <input
           className="search"
@@ -41,9 +43,12 @@ function InputSubmit ({
           type="text"
           value={value}
           onChange={event => changeValue(event)}
-          // onBlur={event => blurHandler(event)}
+          onBlur={event => blurHandler(event)}
         />
-        <button className="button-input" onClick={() => submitValue()}>
+        <button 
+          className="button-input"
+          onClick={() => submitValue()}
+        >
           Search
         </button>
         </form>
