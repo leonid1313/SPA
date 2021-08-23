@@ -7,6 +7,7 @@ import About from './pages/About/About.jsx'
 import Loader from './components/Loader/Loader.jsx'
 
 
+
 function App () {
 
   const [loader, setLoader] = useState(false);

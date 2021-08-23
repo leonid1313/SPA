@@ -5,14 +5,11 @@ function About ({
   ...props
 }) {
 
-  console.log(props);
-  console.log(props.location.data);
-
     return (
       <div className="container-about">
           <div className="container-card container-card-about">
-        <a className="link" href={props.location.data.html_url}>
-          <img className="image" src={props.location.data.owner.avatar_url} />
+        <a className="link" target="_blank" href={props.location.data.html_url}>
+          <img className="image-about" src={props.location.data.owner.avatar_url} />
         </a>
         <div className="cardBody">
           <h1 className="login">Login: {props.location.data.owner.login}</h1>

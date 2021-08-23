@@ -25,12 +25,6 @@ function CardList ({
             return a.name.localeCompare(b.name);
           }))
           break;
-
-          case 'Date':
-            setValueOfSort(items.sort(function(a, b) {
-            return parseFloat(b.created_at)- parseFloat(a.created_at);
-          }))
-          break;
   
         default:
           break;
@@ -41,7 +35,6 @@ function CardList ({
       <>
         <select onChange={onChangeStatus}  className="sort">
           <option value="Sort by">Sort by</option>
-          <option value="Date">Years</option>
           <option value="Rank">Rank</option>
           <option value="Name">Name</option>
         </select>

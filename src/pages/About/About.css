@@ -24,3 +24,10 @@
 .date-text {
   text-align: center;
 }
+
+.image-about {
+  display: block;
+  width: 90%;
+  margin: 5px auto;
+  border-radius: 50%;
+}

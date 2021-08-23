@@ -5,18 +5,17 @@ import './Search.css'
 import InputSubmit from '../../components/InputSubmit/InputSubmit.jsx'
 import CardList from '../../components/CardList/CardList.jsx'
 import Pagination from '../../components/Pagination/Pagination.jsx'
+import { useLocalStorage } from '../../Hooks/UseLocalStorage'
 
 function Search () {
-
-  const [repos, setRepos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(12);
-
+  const [repos, setRepos] = useLocalStorage('repos', []);
 
   const searchRepos = async (keyword) => {
     await axios
       .get(`https://api.github.com/search/repositories?q=${keyword}`)
-      .then(result => setRepos( result.data.items ));
+      .then(result => setRepos( result.data.items));
   }
 
   useEffect(() => {
@@ -26,7 +25,8 @@ function Search () {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = repos.slice(indexOfFirstPost, indexOfLastPost);
-  
+    
+
     const paginate = pageNumber => setCurrentPage(pageNumber);
     
     return (
